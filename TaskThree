@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numbers = Console.ReadLine().Split().Select(int.Parse).ToList();
+            List<int> topNumbers = new List<int>();
+            double sum = numbers.Sum();
+            double averageNumber = sum / numbers.Count;
+            
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] > averageNumber)
+                {
+                    topNumbers.Add(numbers[i]);
+                }
+            }
+            List<int> biggestFiveNumbers = new List<int>();
+            if (topNumbers.Count == 0)
+            {
+                Console.WriteLine("No");
+            }
+            if (topNumbers.Count <= 5)
+            {
+                topNumbers.Sort();
+                topNumbers.Reverse();
+                Console.WriteLine(String.Join(" ", topNumbers));
+            }
+            else
+            {
+                var finalList = new List<int>();
+                topNumbers.Sort();
+                topNumbers.Reverse();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    var currentNum = topNumbers[i];
+                    finalList.Add(currentNum);
+                }
+
+                Console.WriteLine(string.Join(" ", finalList));
+            }
+
+        }
+    }
+}
