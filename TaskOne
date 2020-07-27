@@ -6,9 +6,9 @@ namespace NationalCourt
     {
         static void Main(string[] args)
         {
-            byte employee1 = byte.Parse(Console.ReadLine());
-            byte employee2 = byte.Parse(Console.ReadLine());
-            byte employee3 = byte.Parse(Console.ReadLine());
+            int employee1 = byte.Parse(Console.ReadLine());
+            int employee2 = byte.Parse(Console.ReadLine());
+            int employee3 = byte.Parse(Console.ReadLine());
             int people = int.Parse(Console.ReadLine());
             int hoursPassed = 0;
             int breakTime = 0;
